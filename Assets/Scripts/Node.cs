@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Node
 {
-    Vector2 position;
-    bool traversable;
+    public Vector2 position;
+    public bool traversable;
+    public Node(Vector2 aPosition, bool aTraversable) {
+        position = aPosition;
+        traversable = aTraversable;
+    }
 }
