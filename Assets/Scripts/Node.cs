@@ -6,7 +6,7 @@ public class Node
 {
     public Vector2 position;
     public bool traversable;
-    public Node(Vector2 aPosition, bool aTraversable) {
+    public Node(Vector2 aPosition, bool aTraversable, bool aIntersection = false) {
         position = aPosition;
         traversable = aTraversable;
     }
