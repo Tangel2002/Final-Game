@@ -7,6 +7,10 @@ public class MainMenu : MonoBehaviour
 {
     public void LoadLevel(string name)
     {
+        if(name == "LayoutOne")
+        {
+            Cursor.visible = false;
+        }
         SceneManager.LoadScene(name);
 
     }
