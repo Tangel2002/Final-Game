@@ -9,7 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4828365566143690669, guid: b0346a3bf1517a14aa04406ffbbd059c, type: 3}
       propertyPath: m_Name
-      value: Intersection
+      value: Special Intersection
+      objectReference: {fileID: 0}
+    - target: {fileID: 4828365566143690669, guid: b0346a3bf1517a14aa04406ffbbd059c, type: 3}
+      propertyPath: m_TagString
+      value: NoUp
       objectReference: {fileID: 0}
     - target: {fileID: 8193494605983246043, guid: b0346a3bf1517a14aa04406ffbbd059c, type: 3}
       propertyPath: m_RootOrder

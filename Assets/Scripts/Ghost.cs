@@ -12,8 +12,8 @@ public class Ghost : MonoBehaviour
     public GhostFrightened frightened { get; private set; }
     public GhostSoul soul { get; private set; }
     public GhostBehavior initialBehavior;
-    public Vector2Int targetNode;
-    private Transform target;
+    public Vector2Int targetNode { get; private set; }
+    public Transform target;
     public int points = 200;
 
     private void Awake()
@@ -30,17 +30,37 @@ public class Ghost : MonoBehaviour
     {
         ResetState();
     }
-    public void SetDirectionFromTarget()
+    public void SetDirectionFromTarget(bool aSpecial = false)
     {
         Vector2Int currentCoords = grid.CoordinatesFromWorldPoint(this.transform.position);
-        Vector2Int[] possibleDirections = new Vector2Int[4];
+        float[] possibleDirections = new float[4];
         Vector2Int newCoords;
-        for (int i = 0; i < 4; i++) {
-            newCoords = currentCoords + new Vector2Int(Mathf.RoundToInt(Mathf.Cos(Mathf.PI/(i+1))), Mathf.RoundToInt(Mathf.Sin(Mathf.PI/(i+1))));
-            if (grid.NodeFromCoordinates(newCoords).traversable) {
-                possibleDirections[i] = newCoords;
+        float currentMin = 999;
+        int minIndex = -1;
+        foreach (KeyValuePair<int, Vector2Int> pair in Movement.directions)
+        {
+            if ((aSpecial && pair.Key == 0) || (pair.Value == -movement.currentDirection))
+            {
+                possibleDirections[pair.Key] = 999f;
+                continue;
+            }
+            newCoords = currentCoords + pair.Value;
+            if (grid.NodeFromCoordinates(newCoords).traversable)
+            {
+                possibleDirections[pair.Key] = Vector2Int.Distance(newCoords, targetNode);
+            }
+            else
+            {
+                possibleDirections[pair.Key] = 999f;
             }
         }
+        for (int i = 0; i < possibleDirections.Length; i++) {
+            if (possibleDirections[i] < currentMin) {
+                currentMin = possibleDirections[i];
+                minIndex = i;
+            }
+        }
+        movement.SetDirection(minIndex);
     }
     public void ResetState() {
         this.gameObject.SetActive(true);
@@ -66,5 +86,8 @@ public class Ghost : MonoBehaviour
         else {
             FindObjectOfType<GameManager>().PacmanEaten();
         }
+    }
+    public void SetTargetNode (Vector2Int nodeCoords){
+        targetNode = nodeCoords;
     }
 }

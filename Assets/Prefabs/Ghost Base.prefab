@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 8013191838307442660}
   - component: {fileID: 2916961511359663782}
   - component: {fileID: 2572992833471631458}
-  - component: {fileID: 4798441862607968425}
   - component: {fileID: 9152123617892912718}
   - component: {fileID: 5896691294233327311}
   - component: {fileID: 6316816340224274178}
@@ -79,7 +78,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.45
 --- !u!114 &8013191838307442660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,6 +91,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddf77cf63cb6d00458f8a7f1a6de6384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 8
+  speedMultiplier: 1
+  initialDirection: 0
+  obstacles:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!114 &2916961511359663782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,7 +110,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialBehavior: {fileID: 0}
-  target: {fileID: 0}
   points: 200
 --- !u!114 &2572992833471631458
 MonoBehaviour:
@@ -120,19 +124,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultDuration: 0
---- !u!114 &4798441862607968425
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 562542951691928194}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9480df397bbb8bf429b4d307534c6d8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defaultDuration: 20
 --- !u!114 &9152123617892912718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,6 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultDuration: 7
+  scatterTarget: {x: 0, y: 0}
 --- !u!114 &5896691294233327311
 MonoBehaviour:
   m_ObjectHideFlags: 0

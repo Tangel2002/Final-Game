@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &484281409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6656252271918983183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce077afb2a8817a419bd1865de67a32e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultDuration: 20
 --- !u!1001 &6598142861238168205
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21,7 +34,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 562542951691928195, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 562542951691928195, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -55,6 +68,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 833994673130456628, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d65aa956b7569874fab274083826a77f, type: 3}
+    - target: {fileID: 2916961511359663782, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
+      propertyPath: initialBehavior
+      value: 
+      objectReference: {fileID: 2635608577646601411}
     - target: {fileID: 7420835169000919832, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
       propertyPath: m_Color.b
       value: 0
@@ -67,5 +88,41 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8013191838307442660, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
+      propertyPath: initialDirection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013191838307442660, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
+      propertyPath: obstacles.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 9152123617892912718, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9152123617892912718, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
+      propertyPath: scatterTarget.x
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 9152123617892912718, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
+      propertyPath: scatterTarget.y
+      value: 34
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
+--- !u!1 &6656252271918983183 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 562542951691928194, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
+  m_PrefabInstance: {fileID: 6598142861238168205}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2635608577646601411 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9152123617892912718, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
+  m_PrefabInstance: {fileID: 6598142861238168205}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6656252271918983183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab7351e596197744a41936042cb5d65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
