@@ -5,7 +5,9 @@ public class GhostScatter : GhostBehavior
     public Vector2Int scatterTarget;
     public void OnEnable()
     {
-        ghost.SetTargetNode(scatterTarget);
+        if (!ghost.frightened.enabled) {
+            ghost.SetTargetNode(scatterTarget);
+        }
     }
     public void OnDisable()
     {
