@@ -24,6 +24,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blinky
       objectReference: {fileID: 0}
+    - target: {fileID: 562542951691928194, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 562542951691928195, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
       propertyPath: m_RootOrder
       value: 0
