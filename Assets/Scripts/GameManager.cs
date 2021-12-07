@@ -6,6 +6,10 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public TextMeshProUGUI ScoreDisplay;
+
+    public Transform BloodStain;
+    private Transform PlayerTransform;
+
     public Ghost[] ghosts;
     public PacmanScript pacman;
     public Transform pellets;
@@ -27,8 +31,8 @@ public class GameManager : MonoBehaviour
         SetScore(0);
         NewRound();
         bloodstain = false;
+        this.BloodStain.gameObject.SetActive(false);
     }
-
     private void NewRound()
     {
         foreach (Transform pellet in this.pellets)
@@ -65,6 +69,8 @@ public class GameManager : MonoBehaviour
         this.ghostMultiplier++;
     }
     public void PacmanEaten() {
+        PlayerTransform = GameObject.Find("Pacman").transform;
+        BloodStainDrop();
         pacman.ResetState();
         pacman.gameObject.GetComponent<Movement>().enabled = false;
         if (this.bloodstain == true)
@@ -80,6 +86,19 @@ public class GameManager : MonoBehaviour
             //deactivating all other scripts. Then, when bloodstain is cleared, it is set to false,
             //pellets re-enable, and ghosts enter scatter
         }
+    }
+
+    private void BloodStainDrop()
+    {
+        BloodStain.position = PlayerTransform.position;
+        this.BloodStain.gameObject.SetActive(true);
+    }
+
+    public void BloodStainPickUp(BloodStain pellet)
+    {
+        bloodstain = false;
+        PelletEaten(pellet);
+        //this.BloodStain.gameObject.SetActive(false);
     }
 
     public void PelletEaten(Pellet pellet)
@@ -120,6 +139,7 @@ public class GameManager : MonoBehaviour
         }
         return false;
     }
+
 
     private void ResetGhostMultiplier()
     {
