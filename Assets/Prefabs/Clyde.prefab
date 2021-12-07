@@ -7,7 +7,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4066837618936341204}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 25ecae686b77ffd4a8117084d9206056, type: 3}
   m_Name: 
@@ -76,6 +76,10 @@ PrefabInstance:
       propertyPath: defaultDuration
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 2916961511359663782, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
+      propertyPath: initialBehavior
+      value: 
+      objectReference: {fileID: 2020948312922386484}
     - target: {fileID: 7420835169000919832, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
       propertyPath: m_Color.b
       value: 0.33333334
@@ -95,3 +99,14 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 562542951691928194, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
   m_PrefabInstance: {fileID: 4593322602111049814}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2020948312922386484 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2572992833471631458, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
+  m_PrefabInstance: {fileID: 4593322602111049814}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4066837618936341204}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f590583d8c1e0240bc1c4954dcdeba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

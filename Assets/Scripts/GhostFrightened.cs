@@ -29,6 +29,7 @@ public class GhostFrightened : GhostBehavior
             eyes.enabled = true;
             blue.enabled = false;
             white.enabled = false;
+            ghost.movement.enabled = true;
         }
 
     }
@@ -119,7 +120,6 @@ public class GhostFrightened : GhostBehavior
 
         body.enabled = true;
         ghost.movement.body.isKinematic = false;
-        ghost.movement.enabled = true;
         eaten = false;
         this.Disable();
         ghost.home.Enable();

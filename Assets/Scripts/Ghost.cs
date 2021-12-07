@@ -26,10 +26,6 @@ public class Ghost : MonoBehaviour
         frightened = this.GetComponent<GhostFrightened>();
         soul = this.GetComponent<GhostSoul>();
     }
-    private void Start()
-    {
-        ResetState();
-    }
     public void SetDirectionFromTarget(Vector3 aPosition = default, bool aSpecial = false)
     {
         Vector2Int currentCoords;

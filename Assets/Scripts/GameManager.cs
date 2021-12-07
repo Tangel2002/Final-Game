@@ -56,7 +56,8 @@ public class GameManager : MonoBehaviour
         SetScore(this.Score + ghost.points);
     }
     public void PacmanEaten() {
-        this.pacman.gameObject.SetActive(false);
+        pacman.ResetState();
+        pacman.gameObject.GetComponent<Movement>().enabled = false;
         if (this.bloodstain == true)
         {
             GameOver();
@@ -64,7 +65,7 @@ public class GameManager : MonoBehaviour
         else
         {
             bloodstain = true;
-            Invoke(nameof(pacman.ResetState), 3.0f); 
+            pacman.Invoke(nameof(PacmanScript.ResetState), 0.2f); 
             //pacman will reset his state and pellets will become uninteractable,
             //ghosts will trigger ghost.soul in the same manner as frightened, 
             //deactivating all other scripts. Then, when bloodstain is cleared, it is set to false,
