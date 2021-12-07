@@ -1801,6 +1801,8 @@ MonoBehaviour:
   - {fileID: 1565138039}
   - {fileID: 1309209260}
   - {fileID: 1753752069}
+  pacman: {fileID: 0}
+  pellets: {fileID: 1257057088}
 --- !u!4 &1156809409
 Transform:
   m_ObjectHideFlags: 0
