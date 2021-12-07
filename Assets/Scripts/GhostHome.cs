@@ -5,6 +5,7 @@ public class GhostHome : GhostBehavior
 {
     public Transform inside;
     public Transform outside;
+    public Vector3 homeVector;
     private void OnEnable()
     {
         ghost.movement.SetDirection(Vector2Int.up, true);

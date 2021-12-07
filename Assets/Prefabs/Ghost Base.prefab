@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialBehavior: {fileID: 0}
+  target: {fileID: 0}
   points: 200
 --- !u!114 &2572992833471631458
 MonoBehaviour:
@@ -124,6 +125,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultDuration: 0
+  inside: {fileID: 0}
+  outside: {fileID: 0}
+  homeVector: {x: 0, y: 0, z: 0}
 --- !u!114 &9152123617892912718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,6 +155,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultDuration: 8
+  body: {fileID: 7420835169000919832}
+  eyes: {fileID: 833994673130456628}
+  blue: {fileID: 4731706891471942312}
+  white: {fileID: 3864534434921920210}
 --- !u!114 &6316816340224274178
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1627,7 +1627,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 961497228}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Inside Node
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10687,10 +10687,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Inky
       objectReference: {fileID: 0}
-    - target: {fileID: 3115127483035429524, guid: 7b987c427c644c543afad01de25c2434, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3115127483035429525, guid: 7b987c427c644c543afad01de25c2434, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -11055,10 +11051,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pinky
       objectReference: {fileID: 0}
-    - target: {fileID: 1237227907368270499, guid: 6092220fb1ba0b841ae5322c9792a815, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3841591055211178051, guid: 6092220fb1ba0b841ae5322c9792a815, type: 3}
       propertyPath: inside
       value: 
@@ -11078,7 +11070,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1974421326}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Outside Node
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11158,10 +11150,6 @@ PrefabInstance:
     - target: {fileID: 6656252271918983183, guid: 9b1976c7eaf2892488bb48bc457fdb51, type: 3}
       propertyPath: m_Name
       value: Blinky
-      objectReference: {fileID: 0}
-    - target: {fileID: 6656252271918983183, guid: 9b1976c7eaf2892488bb48bc457fdb51, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8657137433203358447, guid: 9b1976c7eaf2892488bb48bc457fdb51, type: 3}
       propertyPath: inside

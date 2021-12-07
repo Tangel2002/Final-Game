@@ -69,6 +69,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2572992833471631458, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
+      propertyPath: homeVector.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2572992833471631458, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
+      propertyPath: homeVector.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2572992833471631458, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
+      propertyPath: homeVector.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2572992833471631458, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
       propertyPath: defaultDuration
       value: 16
       objectReference: {fileID: 0}
@@ -76,6 +88,22 @@ PrefabInstance:
       propertyPath: initialBehavior
       value: 
       objectReference: {fileID: 2020948312922386484}
+    - target: {fileID: 5896691294233327311, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
+      propertyPath: blue
+      value: 
+      objectReference: {fileID: 9085067531154739966}
+    - target: {fileID: 5896691294233327311, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
+      propertyPath: body
+      value: 
+      objectReference: {fileID: 6431941627926590286}
+    - target: {fileID: 5896691294233327311, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
+      propertyPath: eyes
+      value: 
+      objectReference: {fileID: 3759436059345708642}
+    - target: {fileID: 5896691294233327311, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
+      propertyPath: white
+      value: 
+      objectReference: {fileID: 729397348246165124}
     - target: {fileID: 7420835169000919832, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
       propertyPath: m_Color.b
       value: 0.33333334
@@ -106,3 +134,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f590583d8c1e0240bc1c4954dcdeba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!212 &6431941627926590286 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7420835169000919832, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
+  m_PrefabInstance: {fileID: 4593322602111049814}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &3759436059345708642 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 833994673130456628, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
+  m_PrefabInstance: {fileID: 4593322602111049814}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &9085067531154739966 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4731706891471942312, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
+  m_PrefabInstance: {fileID: 4593322602111049814}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &729397348246165124 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3864534434921920210, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
+  m_PrefabInstance: {fileID: 4593322602111049814}
+  m_PrefabAsset: {fileID: 0}

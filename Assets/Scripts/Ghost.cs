@@ -86,12 +86,14 @@ public class Ghost : MonoBehaviour
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Pacman"))
-        {
-            FindObjectOfType<GameManager>().GhostEaten(this);
-        }
-        else {
-            FindObjectOfType<GameManager>().PacmanEaten();
+        if (!frightened.eaten) {
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Pacman"))
+            {
+                FindObjectOfType<GameManager>().GhostEaten(this);
+            }
+            else {
+                FindObjectOfType<GameManager>().PacmanEaten();
+            }
         }
     }
     public void SetTargetNode (Vector2Int nodeCoords){
