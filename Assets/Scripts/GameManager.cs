@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    public TextMeshProUGUI ScoreDisplay;
     public Ghost[] ghosts;
     public PacmanScript pacman;
     public Transform pellets;
@@ -14,6 +16,10 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         NewGame();
+    }
+    private void Update()
+    {
+        ScoreDisplay.text = Score.ToString();
     }
 
     private void NewGame()
