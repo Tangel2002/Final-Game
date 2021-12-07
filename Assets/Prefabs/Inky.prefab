@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultDuration: 20
+  blinky: {fileID: 0}
 --- !u!1001 &3239682584835090454
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38,7 +39,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 562542951691928195, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 562542951691928195, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -76,6 +77,10 @@ PrefabInstance:
       propertyPath: defaultDuration
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 2916961511359663782, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
+      propertyPath: initialBehavior
+      value: 
+      objectReference: {fileID: 1099073459485325428}
     - target: {fileID: 5583548284691893736, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
       propertyPath: m_LocalPosition.z
       value: -1
@@ -107,3 +112,14 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 562542951691928194, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
   m_PrefabInstance: {fileID: 3239682584835090454}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1099073459485325428 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2572992833471631458, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
+  m_PrefabInstance: {fileID: 3239682584835090454}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3115127483035429524}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f590583d8c1e0240bc1c4954dcdeba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

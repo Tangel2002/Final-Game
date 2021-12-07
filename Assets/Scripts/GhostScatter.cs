@@ -20,7 +20,7 @@ public class GhostScatter : GhostBehavior
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Nodes") && this.enabled && !this.ghost.frightened.enabled) {
-            ghost.SetDirectionFromTarget(other.tag == "NoUp");
+            ghost.SetDirectionFromTarget(other.transform.position, other.tag == "NoUp");
         }
     }
 }

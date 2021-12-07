@@ -10,7 +10,7 @@ public class PinkyChase : GhostChase
         {
             Vector2Int targetCoords = ghost.grid.CoordinatesFromWorldPoint(ghost.target.position) + 4 * ghost.target.gameObject.GetComponent<Movement>().currentDirection;
             ghost.SetTargetNode(targetCoords);
-            ghost.SetDirectionFromTarget(other.tag == "NoUp");
+            ghost.SetDirectionFromTarget(other.transform.position, other.tag == "NoUp");
         }
     }
 }
