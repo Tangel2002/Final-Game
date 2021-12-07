@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameObject[] ghosts;
-    public Pacman pacman;
+    public PacmanScript pacman;
     public Transform pellets;
     bool bloodstain;
     public int Score { get; private set; }
