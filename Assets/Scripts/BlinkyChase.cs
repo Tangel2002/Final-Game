@@ -9,7 +9,7 @@ public class BlinkyChase : GhostChase
         if (other.gameObject.layer == LayerMask.NameToLayer("Nodes") && this.enabled && !ghost.frightened.enabled)
         {
             ghost.SetTargetNode(ghost.grid.CoordinatesFromWorldPoint(ghost.target.position));
-            ghost.SetDirectionFromTarget(other.transform.position, other.tag == "NoUp");
+            ghost.SetDirectionFromTarget(other.tag == "NoUp");
         }
     }
 }

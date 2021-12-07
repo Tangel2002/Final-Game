@@ -30,17 +30,9 @@ public class Ghost : MonoBehaviour
     {
         ResetState();
     }
-    public void SetDirectionFromTarget(Vector3 aPosition = default, bool aSpecial = false)
+    public void SetDirectionFromTarget(bool aSpecial = false)
     {
-        Vector2Int currentCoords;
-        if (aPosition == default)
-        {
-            currentCoords = grid.CoordinatesFromWorldPoint(this.transform.position);
-        }
-        else {
-            currentCoords = grid.CoordinatesFromWorldPoint(aPosition);
-        }
-        
+        Vector2Int currentCoords = grid.CoordinatesFromWorldPoint(this.transform.position);
         float[] possibleDirections = new float[4];
         Vector2Int newCoords;
         float currentMin = 999;
@@ -73,13 +65,14 @@ public class Ghost : MonoBehaviour
     public void ResetState() {
         this.gameObject.SetActive(true);
         movement.ResetState();
-        targetNode = grid.CoordinatesFromWorldPoint(movement.startingPosition);
+        
         chase.Disable();
         frightened.Disable();
         soul.Disable();
         scatter.Enable();
-        home.Disable();
-        
+        if (home != initialBehavior) {
+            home.Disable();
+        }
         if (initialBehavior != null) {
             initialBehavior.Enable();
         }

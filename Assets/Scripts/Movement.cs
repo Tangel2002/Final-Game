@@ -27,7 +27,10 @@ public class Movement : MonoBehaviour
     {
         body = this.GetComponent<Rigidbody2D>();
         startingPosition = this.transform.position;
-        ResetState();
+    }
+    private void Start()
+    {
+        ResetState();   
     }
     public void ResetState() {
         speedMultiplier = 1f;
