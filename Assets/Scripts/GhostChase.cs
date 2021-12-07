@@ -4,7 +4,7 @@ public abstract class GhostChase : GhostBehavior
 {
     public virtual void OnEnable()
     {
-        ghost.target = GameObject.Find("Pacman Temp").transform;
+        ghost.target = GameObject.Find("Pacman").transform;
     }
     public virtual void OnDisable()
     {

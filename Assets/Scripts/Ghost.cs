@@ -70,6 +70,34 @@ public class Ghost : MonoBehaviour
         }
         movement.SetDirection(minIndex);
     }
+
+    public void SetDirectionRandom(Vector3 aPosition = default) {
+        Vector2Int currentCoords;
+        if (aPosition == default)
+        {
+            currentCoords = grid.CoordinatesFromWorldPoint(this.transform.position);
+        }
+        else
+        {
+            currentCoords = grid.CoordinatesFromWorldPoint(aPosition);
+        }
+
+        List<int> possibleDirections = new List<int>();
+        Vector2Int newCoords;
+        foreach (KeyValuePair<int, Vector2Int> pair in Movement.directions)
+        {
+            if (pair.Value == -movement.currentDirection)
+            {
+                continue;
+            }
+            newCoords = currentCoords + pair.Value;
+            if (grid.NodeFromCoordinates(newCoords).traversable)
+            {
+                possibleDirections.Add(pair.Key);
+            }
+            movement.SetDirection(possibleDirections[Random.Range(0,possibleDirections.Count)]);
+        }
+    }
     public void ResetState() {
         this.gameObject.SetActive(true);
         movement.ResetState();
@@ -89,12 +117,16 @@ public class Ghost : MonoBehaviour
         if (!frightened.eaten) {
             if (collision.gameObject.layer == LayerMask.NameToLayer("Pacman"))
             {
-                FindObjectOfType<GameManager>().GhostEaten(this);
-            }
-            else {
-                FindObjectOfType<GameManager>().PacmanEaten();
+                if (frightened.enabled) { 
+                    FindObjectOfType<GameManager>().GhostEaten(this);
+                }
+                else
+                {
+                    FindObjectOfType<GameManager>().PacmanEaten();
+                }
             }
         }
+            
     }
     public void SetTargetNode (Vector2Int nodeCoords){
         targetNode = nodeCoords;

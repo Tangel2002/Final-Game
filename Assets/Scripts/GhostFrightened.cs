@@ -82,7 +82,7 @@ public class GhostFrightened : GhostBehavior
         }
         else if (other.gameObject.layer == LayerMask.NameToLayer("Nodes") && this.enabled)
         {
-            ghost.SetDirectionFromTarget(other.transform.position, other.tag == "NoUp");
+            ghost.SetDirectionRandom(other.transform.position);
         }
     }
 

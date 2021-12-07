@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject[] ghosts;
+    public Ghost[] ghosts;
     public PacmanScript pacman;
     public Transform pellets;
     bool bloodstain;
@@ -19,7 +19,6 @@ public class GameManager : MonoBehaviour
     {
         SetScore(0);
         NewRound();
-        bloodstain = false;
     }
 
     private void NewRound()
@@ -34,12 +33,13 @@ public class GameManager : MonoBehaviour
 
     private void ResetState()
     {
+        bloodstain = false;
         for (int i = 0; i < this.ghosts.Length; i++)
         {
-            this.ghosts[i].gameObject.SetActive(true);
+            this.ghosts[i].ResetState();
         }
 
-        this.pacman.gameObject.SetActive(true);
+        this.pacman.ResetState();
     }
 
     private void GameOver()
@@ -64,7 +64,11 @@ public class GameManager : MonoBehaviour
         else
         {
             bloodstain = true;
-            Invoke(nameof(ResetState), 3.0f);
+            Invoke(nameof(pacman.ResetState), 3.0f); 
+            //pacman will reset his state and pellets will become uninteractable,
+            //ghosts will trigger ghost.soul in the same manner as frightened, 
+            //deactivating all other scripts. Then, when bloodstain is cleared, it is set to false,
+            //pellets re-enable, and ghosts enter scatter
         }
     }
     private void SetScore(int Score)

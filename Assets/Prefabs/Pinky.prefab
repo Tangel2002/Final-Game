@@ -88,6 +88,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.9882353
       objectReference: {fileID: 0}
+    - target: {fileID: 8013191838307442660, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
+      propertyPath: initialDirection
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9152123617892912718, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
       propertyPath: scatterTarget.x
       value: 2
