@@ -12,7 +12,7 @@ public class InkyChase : GhostChase
             Vector2Int pacmanFront = ghost.grid.CoordinatesFromWorldPoint(ghost.target.position) + 2 * ghost.target.gameObject.GetComponent<Movement>().currentDirection;
             Vector2Int targetCoords = 2 * pacmanFront - ghost.grid.CoordinatesFromWorldPoint(blinky.position);
             ghost.SetTargetNode(targetCoords);
-            ghost.SetDirectionFromTarget(other.transform.position, other.tag == "NoUp");
+            ghost.SetDirectionFromTarget(other.tag == "NoUp");
         }
     }
 }

@@ -14,7 +14,7 @@ public class ClydeChase : GhostChase
             else {
                 ghost.SetTargetNode(ghost.scatter.scatterTarget);
             }
-            ghost.SetDirectionFromTarget(other.transform.position, other.tag == "NoUp");
+            ghost.SetDirectionFromTarget(other.tag == "NoUp");
         }
     }
 }
