@@ -1627,6 +1627,7 @@ GameObject:
   - component: {fileID: 901540833}
   - component: {fileID: 901540837}
   - component: {fileID: 901540838}
+  - component: {fileID: 901540839}
   m_Layer: 6
   m_Name: Pacman
   m_TagString: Untagged
@@ -1666,7 +1667,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 22996131f41938d4fabb3396b24301a7, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -1767,6 +1768,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18815746e725f874ca236a272e65c8a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &901540839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901540832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddf77cf63cb6d00458f8a7f1a6de6384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 8
+  speedMultiplier: 1
+  initialDirection: 0
+  obstacles:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!1 &1156809407
 GameObject:
   m_ObjectHideFlags: 0

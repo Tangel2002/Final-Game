@@ -32,4 +32,10 @@ public class PacmanScript : MonoBehaviour
         float angle = Mathf.Atan2(this.movement.currentDirection.y, this.movement.currentDirection.x);
         this.transform.rotation = Quaternion.AngleAxis(angle * Mathf.Rad2Deg, Vector3.forward);
     }
+    public void ResetState()
+    {
+        this.enabled = true;
+        this.movement.ResetState();
+        this.gameObject.SetActive(true);
+    }
 }
