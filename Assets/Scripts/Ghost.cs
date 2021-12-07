@@ -91,8 +91,8 @@ public class Ghost : MonoBehaviour
             {
                 possibleDirections.Add(pair.Key);
             }
-            movement.SetDirection(possibleDirections[Random.Range(0,possibleDirections.Count)]);
         }
+        movement.SetDirection(possibleDirections[Random.Range(0, possibleDirections.Count)]);
     }
     public void ResetState() {
         this.gameObject.SetActive(true);

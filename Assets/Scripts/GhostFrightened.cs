@@ -25,11 +25,6 @@ public class GhostFrightened : GhostBehavior
     {
         if (!eaten) {
             base.Disable();
-            body.enabled = true;
-            eyes.enabled = true;
-            blue.enabled = false;
-            white.enabled = false;
-            ghost.movement.enabled = true;
         }
 
     }
@@ -41,6 +36,17 @@ public class GhostFrightened : GhostBehavior
     private void OnDisable()
     {
         ghost.movement.speedMultiplier = 1f;
+        body.enabled = true;
+        eyes.enabled = true;
+        blue.enabled = false;
+        white.enabled = false;
+        if (ghost.chase.enabled)
+        {
+            ghost.chase.OnEnable();
+        }
+        else if (ghost.scatter.enabled) {
+            ghost.scatter.OnEnable();
+        }
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -67,6 +73,8 @@ public class GhostFrightened : GhostBehavior
         blue.enabled = false;
         white.enabled = false;
         ghost.movement.speedMultiplier = 2.5f;
+        ghost.gameObject.layer = LayerMask.NameToLayer("Eye Ghosts");
+        StopAllCoroutines();
         ghost.SetTargetNode(ghost.grid.CoordinatesFromWorldPoint(ghost.movement.startingPosition));
         ghost.SetDirectionFromTarget();
     }
@@ -120,8 +128,9 @@ public class GhostFrightened : GhostBehavior
 
         body.enabled = true;
         ghost.movement.body.isKinematic = false;
+        ghost.gameObject.layer = LayerMask.NameToLayer("Ghosts");
         eaten = false;
         this.Disable();
-        ghost.home.Enable();
+        ghost.home.Enable(5);
     }
 }
