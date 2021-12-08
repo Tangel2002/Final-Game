@@ -31,6 +31,18 @@ public class GhostFrightened : GhostBehavior
     private void OnEnable()
     {
         ghost.movement.speedMultiplier = 0.5f;
+        ghost.movement.SetDirection(-ghost.movement.currentDirection, true);
+        try
+        {
+            if (!ghost.home.enabled)
+            {
+                ghost.SetDirectionRandom();
+            }
+        }
+        catch (System.NullReferenceException) { 
+        
+        }
+        
         eaten = false;
     }
     private void OnDisable()
@@ -130,10 +142,11 @@ public class GhostFrightened : GhostBehavior
         }
 
         body.enabled = true;
+        ghost.movement.enabled = true;
         ghost.movement.body.isKinematic = false;
         ghost.gameObject.layer = LayerMask.NameToLayer("Ghosts");
         eaten = false;
         this.Disable();
-        ghost.home.Enable(5);
+        ghost.home.Enable(2);
     }
 }

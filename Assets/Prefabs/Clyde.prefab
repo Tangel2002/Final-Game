@@ -13,6 +13,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultDuration: 20
+--- !u!114 &3050461724033325674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4066837618936341204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bba79dd5aaa4d6b4f85768884d1a3ca2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultDuration: 999
+  soul: {fileID: 0}
 --- !u!1001 &4593322602111049814
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -92,7 +106,8 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.972549
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6316816340224274178, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b23bc3f9d61107e41ac39bfddacdc37a, type: 3}
 --- !u!1 &4066837618936341204 stripped
 GameObject:

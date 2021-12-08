@@ -229,6 +229,10 @@ PrefabInstance:
       propertyPath: homeVector.z
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 3050461724033325674, guid: 4f821f5c7e80193409ca6aec60a54c40, type: 3}
+      propertyPath: soul
+      value: 
+      objectReference: {fileID: 2077134386}
     - target: {fileID: 4066837618936341204, guid: 4f821f5c7e80193409ca6aec60a54c40, type: 3}
       propertyPath: m_Name
       value: Clyde
@@ -11910,6 +11914,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3212070912475777884, guid: 7b987c427c644c543afad01de25c2434, type: 3}
+      propertyPath: soul
+      value: 
+      objectReference: {fileID: 2077134386}
     - target: {fileID: 8889117045106280212, guid: 7b987c427c644c543afad01de25c2434, type: 3}
       propertyPath: soul
       value: 
@@ -12886,6 +12894,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3317878172528183277, guid: 6092220fb1ba0b841ae5322c9792a815, type: 3}
+      propertyPath: soul
+      value: 
+      objectReference: {fileID: 2077134386}
     - target: {fileID: 1237227907368270498, guid: 6092220fb1ba0b841ae5322c9792a815, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -13460,6 +13472,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 880621982948918671, guid: 9b1976c7eaf2892488bb48bc457fdb51, type: 3}
+      propertyPath: soul
+      value: 
+      objectReference: {fileID: 2077134386}
+    - target: {fileID: 3388861394840642682, guid: 9b1976c7eaf2892488bb48bc457fdb51, type: 3}
       propertyPath: soul
       value: 
       objectReference: {fileID: 2077134386}

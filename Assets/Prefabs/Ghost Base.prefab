@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 2572992833471631458}
   - component: {fileID: 9152123617892912718}
   - component: {fileID: 5896691294233327311}
-  - component: {fileID: 6316816340224274178}
   m_Layer: 7
   m_Name: Ghost Base
   m_TagString: Untagged
@@ -159,19 +158,6 @@ MonoBehaviour:
   eyes: {fileID: 833994673130456628}
   blue: {fileID: 4731706891471942312}
   white: {fileID: 3864534434921920210}
---- !u!114 &6316816340224274178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 562542951691928194}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62e01f4e20d20ce48a3e41e37ce9af55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defaultDuration: 999
 --- !u!1 &2606115439408706383
 GameObject:
   m_ObjectHideFlags: 0

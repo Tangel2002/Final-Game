@@ -67,6 +67,50 @@ public class Ghost : MonoBehaviour
         movement.SetDirection(minIndex);
     }
 
+    public void SetDirectionAwayFromTarget(Vector3 aPosition = default, bool aSpecial = false)
+    {
+        Vector2Int currentCoords;
+        if (aPosition == default)
+        {
+            currentCoords = grid.CoordinatesFromWorldPoint(this.transform.position);
+        }
+        else
+        {
+            currentCoords = grid.CoordinatesFromWorldPoint(aPosition);
+        }
+
+        float[] possibleDirections = new float[4];
+        Vector2Int newCoords;
+        float currentMax = -1;
+        int maxIndex = -1;
+        foreach (KeyValuePair<int, Vector2Int> pair in Movement.directions)
+        {
+            if ((aSpecial && pair.Key == 0) || (pair.Value == -movement.currentDirection))
+            {
+                possibleDirections[pair.Key] = -1f;
+                continue;
+            }
+            newCoords = currentCoords + pair.Value;
+            if (grid.NodeFromCoordinates(newCoords).traversable)
+            {
+                possibleDirections[pair.Key] = Vector2Int.Distance(newCoords, targetNode);
+            }
+            else
+            {
+                possibleDirections[pair.Key] = -1f;
+            }
+        }
+        for (int i = 0; i < possibleDirections.Length; i++)
+        {
+            if (possibleDirections[i] > currentMax)
+            {
+                currentMax = possibleDirections[i];
+                maxIndex = i;
+            }
+        }
+        movement.SetDirection(maxIndex);
+    }
+
     public void SetDirectionRandom(Vector3 aPosition = default) {
         Vector2Int currentCoords;
         if (aPosition == default)

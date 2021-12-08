@@ -58,6 +58,9 @@ public class GhostHome : GhostBehavior
         ghost.SetDirectionFromTarget();
         ghost.movement.body.isKinematic = false;
         ghost.movement.enabled = true;
-        ghost.movement.speedMultiplier = 1.0f;
+        if (!ghost.frightened.enabled)
+        {
+            ghost.movement.speedMultiplier = 1.0f;
+        }
     }
 }

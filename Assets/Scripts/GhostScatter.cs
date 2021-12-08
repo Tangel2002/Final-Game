@@ -5,15 +5,28 @@ public class GhostScatter : GhostBehavior
     public Vector2Int scatterTarget;
     public void OnEnable()
     {
-        if (!ghost.frightened.enabled && !ghost.soul.enabled) {
-            ghost.SetTargetNode(scatterTarget);
+        try
+        {
+            if (!ghost.frightened.enabled && !ghost.soul.enabled)
+            {
+                ghost.SetTargetNode(scatterTarget);
+                if (!ghost.home.enabled)
+                {
+                    ghost.SetDirectionFromTarget();
+                }
+            }
+        }
+        catch (System.NullReferenceException) { 
+        
         }
     }
     public void OnDisable()
     {
         try {
-
-            ghost.movement.SetDirection(-ghost.movement.currentDirection, true);
+            if (!ghost.soul.enabled)
+            {
+                ghost.movement.SetDirection(-ghost.movement.currentDirection, true);
+            }
             this.ghost.chase.Enable();
         }
         catch (System.NullReferenceException) { 

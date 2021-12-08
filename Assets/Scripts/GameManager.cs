@@ -31,9 +31,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         SetScore(0);
         NewRound();
-        bloodstain = false;
-        this.BloodStain.gameObject.SetActive(false);
-        gameOverCanv.SetActive(false);
+        
     }
     private void NewRound()
     {
@@ -53,6 +51,9 @@ public class GameManager : MonoBehaviour
         }
 
         this.pacman.ResetState();
+        bloodstain = false;
+        this.BloodStain.gameObject.SetActive(false);
+        gameOverCanv.SetActive(false);
     }
 
     private void GameOver()
@@ -63,6 +64,7 @@ public class GameManager : MonoBehaviour
         }
 
         this.pacman.gameObject.SetActive(false);
+
         gameOverCanv.SetActive(true);
     }
 
@@ -73,35 +75,42 @@ public class GameManager : MonoBehaviour
     }
     public void PacmanEaten() {
         PlayerTransform = GameObject.Find("Pacman").transform;
-        BloodStainDrop();
-        pacman.ResetState();
-        pacman.gameObject.GetComponent<Movement>().enabled = false;
         if (this.bloodstain == true)
         {
             GameOver();
         }
         else
         {
+            BloodStainDrop();
+            pacman.ResetState();
+            pacman.gameObject.GetComponent<Movement>().enabled = false;
             bloodstain = true;
-            pacman.Invoke(nameof(PacmanScript.ResetState), 0.2f); 
-            //pacman will reset his state and pellets will become uninteractable,
-            //ghosts will trigger ghost.soul in the same manner as frightened, 
-            //deactivating all other scripts. Then, when bloodstain is cleared, it is set to false,
+            pacman.Invoke(nameof(PacmanScript.ResetState), 0.2f);
+            for (int i = 0; i < this.ghosts.Length; i++)
+            {
+                this.ghosts[i].soul.Enable(999);
+            }
+            //ghosts will trigger ghost.soul in the same manner as frightened. 
+            //Then, when bloodstain is cleared, it is set to false,
             //pellets re-enable, and ghosts enter scatter
         }
     }
 
     private void BloodStainDrop()
     {
-        BloodStain.position = PlayerTransform.position;
         this.BloodStain.gameObject.SetActive(true);
+        BloodStain.position = PlayerTransform.position;
     }
 
     public void BloodStainPickUp(BloodStain pellet)
     {
         bloodstain = false;
         PelletEaten(pellet);
-        //this.BloodStain.gameObject.SetActive(false);
+
+        for (int i = 0; i < this.ghosts.Length; i++)
+        {
+            this.ghosts[i].soul.Disable();
+        }
     }
 
     public void PelletEaten(Pellet pellet)
@@ -127,7 +136,6 @@ public class GameManager : MonoBehaviour
         PelletEaten(pellet);
         CancelInvoke();
         Invoke(nameof(ResetGhostMultiplier), pellet.duration);
-        //change ghost state
     }
 
     private bool HasRemainingPellets()

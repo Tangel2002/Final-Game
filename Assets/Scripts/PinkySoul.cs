@@ -8,5 +8,14 @@ public class PinkySoul : GhostSoul
     {
         ghost.target = soul;
     }
-    //targets the space farthest from the soul
+    //targets the direction away from the soul
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Nodes") && this.enabled && !ghost.frightened.enabled)
+        {
+            Vector2Int targetCoords = ghost.grid.CoordinatesFromWorldPoint(ghost.target.position);
+            ghost.SetTargetNode(targetCoords);
+            ghost.SetDirectionAwayFromTarget(other.transform.position, other.tag == "NoUp");
+        }
+    }
 }
