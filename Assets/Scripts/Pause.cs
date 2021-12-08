@@ -26,9 +26,11 @@ public class Pause : MonoBehaviour
         {
             canv.SetActive(true);
             Cursor.visible = true;
+            Time.timeScale = 0;
         }
         else
         {
+            Time.timeScale = 1;
             canv.SetActive(false);
             Cursor.visible = false;
         }

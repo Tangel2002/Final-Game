@@ -6,7 +6,7 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public TextMeshProUGUI ScoreDisplay;
-
+    public GameObject gameOverCanv;
     public Transform BloodStain;
     private Transform PlayerTransform;
 
@@ -26,12 +26,13 @@ public class GameManager : MonoBehaviour
         ScoreDisplay.text = Score.ToString();
     }
 
-    private void NewGame()
+    public void NewGame()
     {
         SetScore(0);
         NewRound();
         bloodstain = false;
         this.BloodStain.gameObject.SetActive(false);
+        gameOverCanv.SetActive(false);
     }
     private void NewRound()
     {
@@ -61,6 +62,7 @@ public class GameManager : MonoBehaviour
         }
 
         this.pacman.gameObject.SetActive(false);
+        gameOverCanv.SetActive(true);
     }
 
     public void GhostEaten(Ghost ghost) {
