@@ -28,9 +28,17 @@ public class PacmanScript : MonoBehaviour
         {
             this.movement.SetDirection(Vector2Int.right);
         }
-
+        //this changes rotation
         float angle = Mathf.Atan2(this.movement.currentDirection.y, this.movement.currentDirection.x);
         this.transform.rotation = Quaternion.AngleAxis(angle * Mathf.Rad2Deg, Vector3.forward);
+
+        //this is the stamina drain
+        if (Input.GetKey(KeyCode.Space))
+        {
+            Stamina.instance.UseStamina(1);
+
+        }
+
     }
     public void ResetState()
     {
