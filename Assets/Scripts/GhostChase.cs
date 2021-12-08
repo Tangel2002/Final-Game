@@ -4,7 +4,7 @@ public abstract class GhostChase : GhostBehavior
 {
     public virtual void OnEnable()
     {
-        if (!ghost.frightened.enabled)
+        if (!ghost.frightened.enabled && !ghost.soul.enabled)
         {
             ghost.target = GameObject.Find("Pacman").transform;
         }

@@ -6,7 +6,7 @@ public class ClydeChase : GhostChase
 {
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Nodes") && this.enabled && !ghost.frightened.enabled)
+        if (other.gameObject.layer == LayerMask.NameToLayer("Nodes") && this.enabled && !ghost.frightened.enabled && !ghost.soul.enabled)
         {
             if (Vector3.Distance(ghost.transform.position, ghost.target.position) > 8f) {
                 ghost.SetTargetNode(ghost.grid.CoordinatesFromWorldPoint(ghost.target.position));

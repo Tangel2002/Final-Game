@@ -45,7 +45,7 @@ public class StageGrid : MonoBehaviour
         int y = Mathf.Clamp(coords.y, 0, (gridY - 1));
         return grid[x, y];
     }
-    private void OnDrawGizmos()
+    /*private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(this.transform.position, new Vector3(gridSize.x * nodeSize, gridSize.y * nodeSize));
         if (grid != null)
@@ -71,5 +71,5 @@ public class StageGrid : MonoBehaviour
                 }
             }
         }
-    }
+    }*/
 }

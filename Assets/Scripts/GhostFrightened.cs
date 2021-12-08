@@ -47,6 +47,9 @@ public class GhostFrightened : GhostBehavior
         else if (ghost.scatter.enabled) {
             ghost.scatter.OnEnable();
         }
+        if (ghost.soul.enabled) {
+            ghost.soul.OnEnable();
+        }
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
