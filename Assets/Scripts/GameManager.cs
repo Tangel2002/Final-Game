@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
 
     public void NewGame()
     {
+        Time.timeScale = 1;
         SetScore(0);
         NewRound();
         bloodstain = false;
