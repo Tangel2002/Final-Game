@@ -33,7 +33,6 @@ public class GameManager : MonoBehaviour
         bloodstain = false;
         this.BloodStain.gameObject.SetActive(false);
         gameOverCanv.SetActive(false);
-        Cursor.visible = false;
     }
     private void NewRound()
     {
@@ -64,7 +63,6 @@ public class GameManager : MonoBehaviour
 
         this.pacman.gameObject.SetActive(false);
         gameOverCanv.SetActive(true);
-        Cursor.visible = true;
     }
 
     public void GhostEaten(Ghost ghost) {
