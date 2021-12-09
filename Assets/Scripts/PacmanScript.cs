@@ -37,8 +37,20 @@ public class PacmanScript : MonoBehaviour
         {
             Stamina.instance.UseStamina(1);
 
-        }
+            if(Stamina.instance.currentStamina >= 0)
+            {
+                this.movement.speedMultiplier = 1.5f;
+            }
 
+        }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            this.movement.speedMultiplier = 1.0f;
+        }
+        if (Stamina.instance.currentStamina == 0)
+        {
+            this.movement.speedMultiplier = 1.0f;
+        }
     }
     public void ResetState()
     {
