@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         SetScore(0);
         NewRound();
+        Cursor.visible = false;
         
     }
     private void NewRound()
@@ -64,7 +65,7 @@ public class GameManager : MonoBehaviour
         }
 
         this.pacman.gameObject.SetActive(false);
-
+        Cursor.visible = true;
         gameOverCanv.SetActive(true);
     }
 
