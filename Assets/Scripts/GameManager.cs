@@ -119,7 +119,7 @@ public class GameManager : MonoBehaviour
 
         SetScore(this.Score + pellet.points);
 
-        if (!HasRemainingPellets())
+        if (!HasRemainingPellets() && !bloodstain)
         {
             this.pacman.gameObject.SetActive(false);
             Invoke(nameof(NewRound), 3.0f);
@@ -143,10 +143,14 @@ public class GameManager : MonoBehaviour
 
         foreach (Transform pellet in this.pellets)
         {
-            if (pellet.gameObject.activeSelf)
-            {
-                return true;
-            }
+                if (pellet.gameObject.activeSelf)
+                {
+
+                    return true;
+
+                }
+            
+            
         }
         return false;
     }
