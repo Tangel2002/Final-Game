@@ -5,9 +5,14 @@ using UnityEngine;
 public class PacmanScript : MonoBehaviour
 {
     public Movement movement { get; private set; }
+    public AnimatedSprite sprite { get; private set; }
+    private Sprite[] baseSprites;
+    public Sprite[] invincibleSprites;
 
     private void Awake()
     {
+        this.sprite = GetComponent<AnimatedSprite>();
+        baseSprites = sprite.sprites;
         this.movement = GetComponent<Movement>();
     }
     void Update()
@@ -57,5 +62,20 @@ public class PacmanScript : MonoBehaviour
         this.enabled = true;
         this.movement.ResetState();
         this.gameObject.SetActive(true);
+        this.gameObject.layer = LayerMask.NameToLayer("Pacman");
+        CancelInvoke();
+        EnterInvincible();
+    }
+
+    public void EnterInvincible(float aDuration = 2) {
+        this.gameObject.layer = LayerMask.NameToLayer("Ghosts");
+        sprite.sprites = this.invincibleSprites;
+        sprite.Restart();
+        Invoke(nameof(ExitInvincible), aDuration);
+    }
+    public void ExitInvincible() {
+        this.gameObject.layer = LayerMask.NameToLayer("Pacman");
+        sprite.sprites = this.baseSprites;
+        sprite.Restart();
     }
 }

@@ -140,6 +140,7 @@ public class Ghost : MonoBehaviour
     }
     public void ResetState() {
         this.gameObject.SetActive(true);
+        this.gameObject.layer = LayerMask.NameToLayer("Ghosts");
         movement.ResetState();
         targetNode = grid.CoordinatesFromWorldPoint(movement.startingPosition);
         chase.Disable();
@@ -157,7 +158,7 @@ public class Ghost : MonoBehaviour
         if (!frightened.eaten) {
             if (collision.gameObject.layer == LayerMask.NameToLayer("Pacman"))
             {
-                if (frightened.enabled) { 
+                if (frightened.enabled) {
                     FindObjectOfType<GameManager>().GhostEaten(this);
                 }
                 else

@@ -66,7 +66,7 @@ public class GhostFrightened : GhostBehavior
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Pacman") && !eaten)
+        if (collision.gameObject.GetComponent<PacmanScript>() != null && !eaten)
         {
             if (this.enabled) {
                 Eaten();

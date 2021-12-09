@@ -84,9 +84,7 @@ public class GameManager : MonoBehaviour
         {
             BloodStainDrop();
             pacman.ResetState();
-            pacman.gameObject.GetComponent<Movement>().enabled = false;
             bloodstain = true;
-            pacman.Invoke(nameof(PacmanScript.ResetState), 0.2f);
             for (int i = 0; i < this.ghosts.Length; i++)
             {
                 this.ghosts[i].soul.Enable(999);
